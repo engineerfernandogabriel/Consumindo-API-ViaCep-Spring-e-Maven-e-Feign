@@ -33,6 +33,14 @@ O serviço conta com:
 
 &emsp;** _Para parar o serviço usar o CTRL + C_
 
+
+&nbsp;
+--
+### Documentação swagger
+
+    $ http://localhost:8080/swagger-ui/index.html
+---
+
 &nbsp;
 # GET - consultaEndereco _(informações do cep)_
 
