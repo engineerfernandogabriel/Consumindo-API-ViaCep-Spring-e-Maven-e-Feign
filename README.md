@@ -8,7 +8,7 @@ O serviço conta com:
 - Tratamento da entrada das cidades e nome da Rua - a API exige conter no mínimo 3 digitos para ambos os parâmetros.
 
 &nbsp;
-# Como rodar e testar o software
+# RODANDO A APLICAÇÃO
 ### OPÇÃO 1
 &emsp;Run da própria IDE
 
@@ -33,16 +33,10 @@ O serviço conta com:
 
 &emsp;** _Para parar o serviço usar o CTRL + C_
 
-
 &nbsp;
---
-### Documentação swagger
-
-    $ http://localhost:8080/swagger-ui/index.html
 ---
-
-&nbsp;
-# GET - consultaEndereco _(informações do cep)_
+## TESTANDO A APLICAÇÃO
+### GET - consultaEndereco _(informações do cep)_
 
   exibe as informações correspondentes ao cep informado;
 
@@ -71,7 +65,7 @@ Response
     }
 
 &nbsp;
-# GET - consultaCep _(descobrir o cep)_
+### GET - consultaCep _(descobrir o cep)_
 
 exibe as informações correspondentes ao estado, cidade e nome da Rua informados;
 
@@ -157,3 +151,9 @@ _retorna uma lista com todas as correspondências do nome pesquisado_
             "siafi": "7535"
         }
     ]
+
+---
+
+### Documentação swagger
+
+    $ http://localhost:8080/swagger-ui/index.html
