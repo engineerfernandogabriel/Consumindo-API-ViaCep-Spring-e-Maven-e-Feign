@@ -1,7 +1,10 @@
 package br.com.octopus.viaCep.controller;
 
+import br.com.octopus.viaCep.model.EnderecoResponse;
 import br.com.octopus.viaCep.service.EnderecoService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -19,7 +22,7 @@ public class EnderecoController {
 
     @Operation(summary = "consultar endereço pelo cep", method = "GET")
     @ApiResponses(value = {
-        @ApiResponse(responseCode = "200", description = "Consulta Ok"),
+        @ApiResponse(responseCode = "200", description = "Consulta Ok", content = {@Content(mediaType = "application/json", schema = @Schema(implementation = EnderecoResponse.class))}),
         @ApiResponse(responseCode = "400", description = "Parâmetros Inválidos"),
     })
     @GetMapping("/consultaEndereco/{cep}")
@@ -29,7 +32,7 @@ public class EnderecoController {
 
     @Operation(summary = "consultar cep pelo endereço", method = "GET")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Consulta Ok"),
+            @ApiResponse(responseCode = "200", description = "Consulta Ok", content = {@Content(mediaType = "application/json", schema = @Schema(implementation = EnderecoResponse.class))}),
             @ApiResponse(responseCode = "400", description = "Parâmetros Inválidos"),
     })
     @GetMapping("/consultaCep")
