@@ -9,6 +9,9 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
+
+import java.util.List;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,7 +29,7 @@ public class EnderecoController {
         @ApiResponse(responseCode = "400", description = "Parâmetros Inválidos"),
     })
     @GetMapping("/consultaEndereco/{cep}")
-    public ResponseEntity<?> consultaEndereco(@PathVariable String cep) {
+    public EnderecoResponse consultaEndereco(@PathVariable String cep) {
         return service.consultaEndereco(cep);
     }
 
@@ -36,7 +39,7 @@ public class EnderecoController {
             @ApiResponse(responseCode = "400", description = "Parâmetros Inválidos"),
     })
     @GetMapping("/consultaCep")
-    public ResponseEntity<?> consultaCep(@RequestParam String uf, @RequestParam String cidade, @RequestParam String nomeDaRua){
+    public List<EnderecoResponse> consultaCep(@RequestParam String uf, @RequestParam String cidade, @RequestParam String nomeDaRua){
         return service.consultaCep(uf, cidade, nomeDaRua);
     }
 
